@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/index',[TwitterController::class,'index']);
+Route::get('/tweet',[TwitterController::class,'tweet']);
+Route::post('/schedule',[TwitterController::class,'schedule']);
+
