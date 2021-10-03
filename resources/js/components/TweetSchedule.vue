@@ -1,14 +1,16 @@
+
 <template>
+
     <div>
 
         
-        <button @click="recupera_post">
-            Recupera Post
-        </button>
+        <h1>Ecco i post:</h1>
 
-        <div v-for='tweet in tweets'>
-            <h2>{{tweet.tweet}}</h2>
-        </div>
+      <div v-for="tweet in tweets" :key="tweet.tweet">
+          <h2>{{tweet.tweet}}</h2>
+      </div>
+            
+       
 
     </div>
 </template>
@@ -16,21 +18,24 @@
 <script>
     export default {
         mounted() {
-            console.log('Component mounted.')
+         this.recupera_post()
+        },
+   
+    data(){ 
+        return{
+             tweets:[]
         }
- data:{
-        tweets:[]
+       
     },
     methods:{
-        recupera_post(){
-            axios.get('api/schedulepost')
-            .then(function(risposta){
-                console.log(risposta.data)
-                app.tweets=risposta.data
+        async recupera_post(){
+     await axios.get('api/schedulepost')
+     .then((response) => {
+       console.log(response.data)
+       this.tweets = response.data
+     })
             }
-            )
         }
     }
-        }
-    }
+    
 </script>
