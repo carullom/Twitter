@@ -10,18 +10,26 @@ use GuzzleHttp\Promise\Create;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterController extends Controller
+
+
 {
+    private $TWITTER_CONSUMER_KEY;
+    private $TWITTER_CONSUMER_SECRET;
+    private $TWITTER_ACCESS_TOKEN;
+    private $TWITTER_ACCESS_TOKEN_SECRET;
 
- 
+    public function __construct()
+    {
+         $this->TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
+         $this->TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
+         $this->TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
+         $this->TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
 
+
+    }
 
     public function index(Request $request){
-        $TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
-        $TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
-        $TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
-        $TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
-
-        $connection = new TwitterOAuth($TWITTER_CONSUMER_KEY, $TWITTER_CONSUMER_SECRET, $TWITTER_ACCESS_TOKEN, $TWITTER_ACCESS_TOKEN_SECRET);
+        $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
         $tweet=$request->input('tweet');
         $statues = $connection->post("statuses/update", ["status" => $tweet]);
         return $statues;
@@ -33,13 +41,8 @@ class TwitterController extends Controller
     }
 
     public function tweet(){
-        $TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
-        $TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
-        $TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
-        $TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
-    
-
-        $connection = new TwitterOAuth($TWITTER_CONSUMER_KEY, $TWITTER_CONSUMER_SECRET, $TWITTER_ACCESS_TOKEN, $TWITTER_ACCESS_TOKEN_SECRET);
+      
+        $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
         $statuses = $connection->get("statuses/user_timeline");
         return $statuses;
     }

@@ -2089,13 +2089,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /***/ (() => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Marco\\Desktop\\Twitter\\resources\\js\\components\\pippo.vue: Unexpected token (25:12)\n\n  23 |             .then((response)=>{\n  24 |                 this.tweets=response.data.data;\n> 25 |             )}\n     |             ^\n  26 |         }\n  27 |     }\n  28 |\n    at Parser._raise (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:510:17)\n    at Parser.raiseWithData (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:503:17)\n    at Parser.raise (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:464:17)\n    at Parser.unexpected (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:3368:16)\n    at Parser.parseExprAtom (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:11648:20)\n    at Parser.parseExprSubscripts (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:11217:23)\n    at Parser.parseUpdate (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:11197:21)\n    at Parser.parseMaybeUnary (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:11172:23)\n    at Parser.parseMaybeUnaryOrPrivate (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10986:59)\n    at Parser.parseExprOps (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10993:23)\n    at Parser.parseMaybeConditional (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10963:23)\n    at Parser.parseMaybeAssign (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10926:21)\n    at Parser.parseExpressionBase (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10866:23)\n    at D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10860:39\n    at Parser.allowInAnd (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:12720:12)\n    at Parser.parseExpression (D:\\Marco\\Desktop\\Twitter\\node_modules\\@babel\\parser\\lib\\index.js:10860:17)");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\Marco\\Desktop\\twitter\\resources\\js\\components\\TweetSchedule.vue: Unexpected token, expected \",\" (21:0)\n\n  19 |            console.log('Component mounted.')\n  20 |        }\n> 21 | data:{\n     | ^\n  22 |        tweets:[]\n  23 |    },\n  24 |    methods:{\n    at Parser._raise (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:510:17)\n    at Parser.raiseWithData (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:503:17)\n    at Parser.raise (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:464:17)\n    at Parser.unexpected (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:3368:16)\n    at Parser.expect (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:3342:28)\n    at Parser.parseObjectLike (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:12072:14)\n    at Parser.parseExprAtom (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:11571:23)\n    at Parser.parseExprSubscripts (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:11217:23)\n    at Parser.parseUpdate (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:11197:21)\n    at Parser.parseMaybeUnary (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:11172:23)\n    at Parser.parseMaybeUnaryOrPrivate (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:10986:59)\n    at Parser.parseExprOps (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:10993:23)\n    at Parser.parseMaybeConditional (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:10963:23)\n    at Parser.parseMaybeAssign (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:10926:21)\n    at D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:10888:39\n    at Parser.allowInAnd (D:\\Marco\\Desktop\\twitter\\node_modules\\@babel\\parser\\lib\\index.js:12714:16)");
 
 /***/ }),
 
@@ -2130,7 +2130,7 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('pippo-component', __webpack_require__(/*! ./components/pippo.vue */ "./resources/js/components/pippo.vue")["default"]);
+Vue.component('tweetschedule-component', __webpack_require__(/*! ./components/TweetSchedule.vue */ "./resources/js/components/TweetSchedule.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });
@@ -37603,10 +37603,10 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/pippo.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/components/pippo.vue ***!
-  \*******************************************/
+/***/ "./resources/js/components/TweetSchedule.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/TweetSchedule.vue ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37614,10 +37614,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pippo.vue?vue&type=template&id=836598ca& */ "./resources/js/components/pippo.vue?vue&type=template&id=836598ca&");
-/* harmony import */ var _pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pippo.vue?vue&type=script&lang=js& */ "./resources/js/components/pippo.vue?vue&type=script&lang=js&");
+/* harmony import */ var _TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TweetSchedule.vue?vue&type=template&id=4af203cd& */ "./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd&");
+/* harmony import */ var _TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TweetSchedule.vue?vue&type=script&lang=js& */ "./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js&");
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
@@ -37628,9 +37628,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__.render,
-  _pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__.render,
+  _TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -37640,7 +37640,7 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/pippo.vue"
+component.options.__file = "resources/js/components/TweetSchedule.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -37661,10 +37661,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/pippo.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/components/pippo.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
+/***/ "./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37672,12 +37672,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./pippo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TweetSchedule.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default())); 
 
 /***/ }),
 
@@ -37698,19 +37698,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/pippo.vue?vue&type=template&id=836598ca&":
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/pippo.vue?vue&type=template&id=836598ca& ***!
-  \**************************************************************************/
+/***/ "./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd& ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pippo_vue_vue_type_template_id_836598ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./pippo.vue?vue&type=template&id=836598ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=template&id=836598ca&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TweetSchedule_vue_vue_type_template_id_4af203cd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TweetSchedule.vue?vue&type=template&id=4af203cd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd&");
 
 
 /***/ }),
@@ -37763,10 +37763,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=template&id=836598ca&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/pippo.vue?vue&type=template&id=836598ca& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TweetSchedule.vue?vue&type=template&id=4af203cd& ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -37780,14 +37780,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "ul",
-    { staticClass: "list-group" },
-    _vm._l(_vm.tweets, function(tweet) {
-      return _c("li", { staticClass: "list-group-item" }, [
-        _vm._v(_vm._s(tweet.text))
-      ])
-    }),
-    0
+    "div",
+    [
+      _c("button", { on: { click: _vm.recupera_post } }, [
+        _vm._v("\n        Recupera Post\n    ")
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.tweets, function(tweet) {
+        return _c("div", [_c("h2", [_vm._v(_vm._s(tweet.tweet))])])
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []

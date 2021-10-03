@@ -13,7 +13,7 @@
 </head>
 <body>
     <div id='app' class="m-5">
-       <pippo-component />
+       <example-component />
         
     </div>
    

@@ -28,7 +28,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
  
- Vue.component('pippo-component', require('./components/pippo.vue').default);
+ Vue.component('tweetschedule-component', require('./components/TweetSchedule.vue').default);
  const app = new Vue({
    el: '#app',
    
