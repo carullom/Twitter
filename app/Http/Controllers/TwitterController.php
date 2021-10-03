@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Abraham\TwitterOAuth\TwitterOAuth;
 use App\Models\Post;
 use App\Models\Tweet;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
 use GuzzleHttp\Promise\Create;
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 class TwitterController extends Controller
 {
+
+ 
+
+
     public function index(Request $request){
-        $TWITTER_CONSUMER_KEY='xEO43oCVeUF4g3cq4Ht0LzcED';
-        $TWITTER_CONSUMER_SECRET='8BKMJvLAmAY2dngGfyXYFvZ9O0dQh8pgwXf1myjYNYbwR1KzOU';
-        $TWITTER_ACCESS_TOKEN='1443605675729432580-C1pzICwQinmgUUGzBFQh0LqQNyhfkr';
-        $TWITTER_ACCESS_TOKEN_SECRET='KVyCBhctUzAI5S78HyDmyqyvrxCZf4t9k5vaLJbZupuRW';
+        $TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
+        $TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
+        $TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
+        $TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
 
         $connection = new TwitterOAuth($TWITTER_CONSUMER_KEY, $TWITTER_CONSUMER_SECRET, $TWITTER_ACCESS_TOKEN, $TWITTER_ACCESS_TOKEN_SECRET);
         $tweet=$request->input('tweet');
@@ -28,10 +33,11 @@ class TwitterController extends Controller
     }
 
     public function tweet(){
-        $TWITTER_CONSUMER_KEY='xEO43oCVeUF4g3cq4Ht0LzcED';
-        $TWITTER_CONSUMER_SECRET='8BKMJvLAmAY2dngGfyXYFvZ9O0dQh8pgwXf1myjYNYbwR1KzOU';
-        $TWITTER_ACCESS_TOKEN='1443605675729432580-C1pzICwQinmgUUGzBFQh0LqQNyhfkr';
-        $TWITTER_ACCESS_TOKEN_SECRET='KVyCBhctUzAI5S78HyDmyqyvrxCZf4t9k5vaLJbZupuRW';
+        $TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
+        $TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
+        $TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
+        $TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
+    
 
         $connection = new TwitterOAuth($TWITTER_CONSUMER_KEY, $TWITTER_CONSUMER_SECRET, $TWITTER_ACCESS_TOKEN, $TWITTER_ACCESS_TOKEN_SECRET);
         $statuses = $connection->get("statuses/user_timeline");
@@ -47,6 +53,11 @@ class TwitterController extends Controller
         $post->save();
         return $post;
         
+    }
+
+    public function schedulePost(){
+        $post=Post::where('pubblished_at', null)->get();
+        return $post;
     }
 
 }

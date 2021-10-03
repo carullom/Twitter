@@ -29,15 +29,19 @@ class Kernel extends ConsoleKernel
        
         $schedule->call(function(){
             $data=now();
-            $tweet=Post::where('schedule_at','=',$data)->where('pubblished_at',null)->value('tweet');
-            $TWITTER_CONSUMER_KEY='xEO43oCVeUF4g3cq4Ht0LzcED';
-            $TWITTER_CONSUMER_SECRET='8BKMJvLAmAY2dngGfyXYFvZ9O0dQh8pgwXf1myjYNYbwR1KzOU';
-            $TWITTER_ACCESS_TOKEN='1443605675729432580-C1pzICwQinmgUUGzBFQh0LqQNyhfkr';
-            $TWITTER_ACCESS_TOKEN_SECRET='KVyCBhctUzAI5S78HyDmyqyvrxCZf4t9k5vaLJbZupuRW';
+            $tweets=Post::where('schedule_at','=',$data)->where('pubblished_at',null)->get();
+            $TWITTER_CONSUMER_KEY=env('TWITTER_CONSUMER_KEY');
+            $TWITTER_CONSUMER_SECRET=env('TWITTER_CONSUMER_SECRET');
+            $TWITTER_ACCESS_TOKEN=env('TWITTER_ACCESS_TOKEN');
+            $TWITTER_ACCESS_TOKEN_SECRET=env('TWITTER_ACCESS_TOKEN_SECRET');
             
     
             $connection = new TwitterOAuth($TWITTER_CONSUMER_KEY, $TWITTER_CONSUMER_SECRET, $TWITTER_ACCESS_TOKEN, $TWITTER_ACCESS_TOKEN_SECRET);
-            $statues = $connection->post("statuses/update", ["status" => $tweet]);
+            foreach($tweets as $tweet){
+                $statues = $connection->post("statuses/update", ["status" => $tweet['tweet']]);
+            }
+           
+            $post=Post::where('schedule_at','=',$data)->where('pubblished_at',null)->update(['pubblished_at'=>$data]);
         })->everyMinute();
     }
 
