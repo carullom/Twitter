@@ -27,26 +27,26 @@ class TwitterController extends Controller
 
 
     }
-
-    public function index(Request $request){
+    //funzione per pubblicare un tweet
+    public function insert(Request $request){
         $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
         $tweet=$request->input('tweet');
         $statues = $connection->post("statuses/update", ["status" => $tweet]);
         return $statues;
       
     }
-
+    //funzione per richimare la pagina della web app
     public function twitter(){
         return view('twitter');
     }
-
+    //funzione per visualizzare i tweet pubblicati
     public function tweet(){
       
         $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
         $statuses = $connection->get("statuses/user_timeline");
         return $statuses;
     }
-
+    //funzione per progtammare i tweet
     public function schedule(Request $request){
         $tweet=$request->input('tweet');
         $schedule_at=$request->input('schedule_at');
@@ -57,10 +57,18 @@ class TwitterController extends Controller
         return $post;
         
     }
-
+    //funzione per visualizzare i tweet programmati e non ancora pubblicati
     public function schedulePost(){
         $post=Post::where('pubblished_at', null)->get();
         return $post;
+    }
+
+    //funzione per recuperare dati utente 
+    public function user(){
+      
+        $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
+        $statuses = $connection->get("account/verify_credentials");
+        return $statuses;
     }
 
 }

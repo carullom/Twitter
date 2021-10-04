@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <div id='app' class="m-5">
+    <div id='app'>
        <tweetschedule-component />
         
     </div>
