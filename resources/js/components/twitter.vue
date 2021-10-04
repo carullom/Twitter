@@ -49,6 +49,10 @@
 
                 </div>
 
+                <div v-if="error!=''">  
+                    <h3 class="text-danger text-center">{{error}}</h3>
+                </div>
+
             </div>
 
             </div>
@@ -106,8 +110,7 @@
         mounted() {
          this.post_schedule(),
          this.post_public(),
-         this.user(),
-         this.unit()
+         this.user()
 
         },
    
@@ -122,7 +125,8 @@
             image:'',
             errors:'',
             clock:'',
-            data:''
+            data:'',
+            error:''
         }
       
     },
@@ -145,10 +149,6 @@
             })
         },
 
-        async unit(){
-            this.schedule_at=this.data+this.clock
-            console.log(this.schedule_at)
-        },
 
         //metodo che permette di programmare un post
         async inputschedule(){
@@ -157,6 +157,11 @@
                 schedule_at:this.data+' '+this.clock
         })
         .then((response)=>{
+             if (response.status == 400){
+                 console.log(response.status)
+                 this.error='Il post non può essere pianificato per questa data'
+             }
+             
             
         })
         },
@@ -165,8 +170,8 @@
         async post_public(){
          await axios.get('api/tweet')
          .then((response) => {
-        
-         this.posts=response.data
+             this.posts=response.data
+         
              })
         },
 
