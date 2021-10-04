@@ -67,6 +67,8 @@ return [
     |
     */
 
+    'log' => 'daily',
+
     'timezone' => 'UTC',
 
     /*

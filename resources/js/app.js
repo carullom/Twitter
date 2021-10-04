@@ -8,9 +8,18 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import axios from 'axios';
 
 
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 
 /**
  * The following block of code may be used to automatically register your
@@ -32,9 +41,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
  
- Vue.component('tweetschedule-component', require('./components/TweetSchedule.vue').default);
+ Vue.component('twitter-component', require('./components/twitter.vue').default);
 
- Vue.component('form-component', require('./components/Form.vue').default);
 
  var app = new Vue({
    el: '#app',

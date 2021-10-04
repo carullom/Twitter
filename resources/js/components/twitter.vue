@@ -20,22 +20,32 @@
        
        
 
-        <form>
+        <form  >
             <div class="row mt-5 p-3">
 
             <div class="col-12">
 
                 <div class="form-group">
+                       
                     <h3>Inserisci testo</h3>
-                    <textarea v-model="text" class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?"></textarea>
+                    <textarea v-model="text" class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
                 </div>
                 <div class="form-group mt-3">
                     <h3>Scegli una data</h3>
-                    <input v-model="schedule_at" type="text" class="form-control" id="schedule_at" name="schedule_at" placeholder="0000-00-00 00:00">
+                    <b-form-datepicker id="data" v-model="data" class="mb-2"></b-form-datepicker>
+                        <p>{{ data }}</p>
                 </div>
+
+                 <div class="form-group mt-3">
+                    <h3>Scegli un'ora</h3>
+                     <b-form-timepicker v-model="clock" locale="en"></b-form-timepicker>
+                        <div class="mt-2">{{ clock }}</div>
+                </div>
+                
+
                 <div class="text-center m-3 mx-5">
-                    <button type="submit" class="btn btn-lg  button mt-2" @click="input">Twitta</button>
-                    <button type="submit" class="btn btn-lg  button mt-2" @click="inputschedule">Pianifica</button>
+                    <button type="submit" value="Submit" class="btn btn-lg  button mt-2 mx-2" @click="input" >Twitta</button>
+                    <button type="submit"  class="btn btn-lg  button mt-2 mx-2" @click="inputschedule">Pianifica</button>
 
                 </div>
 
@@ -44,18 +54,17 @@
             </div>
         </form>
     
-       
-
     
+       
         
         <h2 class="mt-5">Post programmati:</h2>
         <hr>
 
         <div class="row justify-content-center" >
             <div class="col-10">
-                  <div v-for="tweet in tweets" :key="tweet.tweet" class="card my-5">
+                  <div v-for="tweet in tweets" :key="tweet.tweet" class="card my-5 animate__animated animate__zoomIn">
                     <div class="card-header color-twitter">
-                         Twitter
+                         @{{nickname}}
                     </div>
                     <div class="card-body">
                 
@@ -72,9 +81,9 @@
 
         <div class="row justify-content-center">
             <div class="col-10">
-                  <div v-for="post in posts" :key="post.text" class="card my-5">
+                  <div v-for="post in posts" :key="post.text" class="card my-5 animate__animated animate__zoomIn">
                     <div class="card-header color-twitter">
-                         Twitter
+                         @{{nickname}}
                     </div>
                     <div class="card-body">
                        
@@ -97,7 +106,8 @@
         mounted() {
          this.post_schedule(),
          this.post_public(),
-         this.user()
+         this.user(),
+         this.unit()
 
         },
    
@@ -109,7 +119,10 @@
             posts:[],
             name:'',
             nickname:'',
-            image:''
+            image:'',
+            errors:'',
+            clock:'',
+            data:''
         }
       
     },
@@ -128,18 +141,23 @@
                     tweet:this.text
             })
             .then((response)=>{
-                console.log(response)
+            
             })
+        },
+
+        async unit(){
+            this.schedule_at=this.data+this.clock
+            console.log(this.schedule_at)
         },
 
         //metodo che permette di programmare un post
         async inputschedule(){
         await axios.post('api/schedule',{
                 tweet:this.text,
-                schedule_at:this.schedule_at
+                schedule_at:this.data+' '+this.clock
         })
         .then((response)=>{
-            console.log(response)
+            
         })
         },
 
@@ -147,7 +165,7 @@
         async post_public(){
          await axios.get('api/tweet')
          .then((response) => {
-             console.log(response.data)
+        
          this.posts=response.data
              })
         },
@@ -161,6 +179,8 @@
             this.image=response.data.profile_image_url
              })
         },
+
+  
     }
 }
     
@@ -180,5 +200,10 @@
 img {
   border-radius: 50%;
  
+}
+
+.button:hover {
+    background-color:rgb(57, 98, 117);
+    color:#1a8cd8;
 }
 </style>
