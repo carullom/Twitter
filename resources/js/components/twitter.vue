@@ -123,7 +123,6 @@
             name:'',
             nickname:'',
             image:'',
-            errors:'',
             clock:'',
             data:'',
             error:''
@@ -151,18 +150,21 @@
 
 
         //metodo che permette di programmare un post
-        async inputschedule(){
-        await axios.post('api/schedule',{
-                tweet:this.text,
-                schedule_at:this.data+' '+this.clock
-        })
-        .then((response)=>{
-             if (response.status == 400){
-                 console.log(response.status)
-                 this.error='Il post non può essere pianificato per questa data'
-             }
-             
+       async inputschedule(){
+          axios.post('api/schedule',{
+            tweet:this.text,
+            schedule_at:this.data+' '+this.clock
+            })
+        .then((response) => {
             
+        })
+        .catch((error)=>{
+            if (error.response) {
+            if (error.response.status == 400){
+                console.log(response.status)
+                this.error='Il post non può essere pianificato per questa data'
+            }
+            }
         })
         },
 

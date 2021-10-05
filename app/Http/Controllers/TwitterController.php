@@ -66,6 +66,7 @@ class TwitterController extends Controller
             Log::info('request', $request->all());
             $post->save();
             return $post;
+            //in app/console/kernel.php è presente lo scheduling che ogni minuto controlla se ci sono post da pubblicare tramite la colonna "schedule_at"
         }
       
         
