@@ -28,18 +28,18 @@
                 <div class="form-group">
                        
                     <h3>Inserisci testo</h3>
-                    <textarea v-model="text" class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
+                    <textarea v-model="text" :rules="[v => (v || '' ).length <= 200 || 'Description must be 200 characters or less']" class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
                 </div>
                 <div class="form-group mt-3">
                     <h3>Scegli una data</h3>
                     <b-form-datepicker id="data" v-model="data" class="mb-2"></b-form-datepicker>
-                        <p>{{ data }}</p>
+                       
                 </div>
 
                  <div class="form-group mt-3">
                     <h3>Scegli un'ora</h3>
                      <b-form-timepicker v-model="clock" locale="en"></b-form-timepicker>
-                        <div class="mt-2">{{ clock }}</div>
+                        
                 </div>
                 
 
@@ -156,7 +156,7 @@
             schedule_at:this.data+' '+this.clock
             })
         .then((response) => {
-            if(response.data == "impossibile programmare il post")
+            if(response.data != "impossibile programmare il post")
             {this.error='Il post non può essere pianificato per questa data'}
         })
         .catch((error)=>{
