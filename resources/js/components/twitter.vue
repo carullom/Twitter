@@ -144,7 +144,7 @@
                     tweet:this.text
             })
             .then((response)=>{
-            
+           console.log(response.data)
             })
         },
 
@@ -156,11 +156,12 @@
             schedule_at:this.data+' '+this.clock
             })
         .then((response) => {
-            
+            if(response.data == "impossibile programmare il post")
+            {this.error='Il post non può essere pianificato per questa data'}
         })
         .catch((error)=>{
             if (error.response) {
-            if (error.response.status == 400){
+            if (error.response.status == "400 Bad Request"){
                 console.log(response.status)
                 this.error='Il post non può essere pianificato per questa data'
             }

@@ -7,8 +7,9 @@ use App\Models\Tweet;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use GuzzleHttp\Promise\Create;
-use Abraham\TwitterOAuth\TwitterOAuth;
 use Illuminate\Support\Facades\Log;
+use Abraham\TwitterOAuth\TwitterOAuth;
+use Illuminate\Support\Facades\Validator;
 
 class TwitterController extends Controller
 
@@ -31,9 +32,26 @@ class TwitterController extends Controller
     //funzione per pubblicare un tweet
     public function insert(Request $request){
         $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
-        $validated = $request->validate([
-            'tweet' => 'required|max:150',
-        ]);
+        
+        $rules = array(
+            'tweet' => ['required','max:240'],
+
+        );
+
+        $code = array(
+            'tweet.required' => 0,
+            'tweet.max' => 1,
+
+        );
+
+        $credentials = Validator::make($request->all(), $rules, $code);
+
+        if ($credentials->fails()) {
+
+            $errors = $this->validation($credentials);
+            return response()->json(['errors' => $errors], 422);
+        }
+      
         $tweet=$request->input('tweet');
         $statues = $connection->post("statuses/update", ["status" => $tweet]);
         Log::info('request', $request->all());
@@ -53,6 +71,24 @@ class TwitterController extends Controller
     }
     //funzione per programmare i tweet
     public function schedule(Request $request){
+        $rules = array(
+            'tweet' => ['required','max:240'],
+
+        );
+
+        $code = array(
+            'tweet.required' => 0,
+            'tweet.max' => 1,
+
+        );
+
+        $credentials = Validator::make($request->all(), $rules, $code);
+
+        if ($credentials->fails()) {
+
+            $errors = $this->validation($credentials);
+            return response()->json(['errors' => $errors], 422);
+        }
         $now=now();
         $tweet=$request->input('tweet');
         $schedule_at=$request->input('schedule_at');
@@ -83,6 +119,26 @@ class TwitterController extends Controller
         $connection = new TwitterOAuth($this->TWITTER_CONSUMER_KEY, $this->TWITTER_CONSUMER_SECRET, $this->TWITTER_ACCESS_TOKEN, $this->TWITTER_ACCESS_TOKEN_SECRET);
         $statuses = $connection->get("account/verify_credentials");
         return $statuses;
+    }
+
+
+
+
+
+    protected function validation($credentials)
+    {
+        $myerror = [];
+        $myerror['0'] = "Il testo è richiesto";
+        $myerror['1'] = "Il testo può contenere max 240 caratteri";
+       
+
+
+        $errors = [];
+        foreach ($credentials->errors()->all() as $key) {
+            $errors['message'] = $myerror[$key];
+            break;
+        }
+        return $errors;
     }
 
 }
