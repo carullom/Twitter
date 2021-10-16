@@ -20,7 +20,7 @@
        
        
 
-        <form  >
+        <form  v-on:submit.prevent="input" >
             <div class="row mt-5 p-3">
 
             <div class="col-12">
@@ -28,7 +28,7 @@
                 <div class="form-group">
                        
                     <h3>Inserisci testo</h3>
-                    <textarea v-model="text" :rules="[v => (v || '' ).length <= 200 || 'Description must be 200 characters or less']" class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
+                    <textarea v-model="text"  class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
                 </div>
                 <div class="form-group mt-3">
                     <h3>Scegli una data</h3>
@@ -44,10 +44,11 @@
                 
 
                 <div class="text-center m-3 mx-5">
-                    <button type="submit" value="Submit" class="btn btn-lg  button mt-2 mx-2" @click="input" >Twitta</button>
+                    <button type="submit" value="Submit" class="btn btn-lg  button mt-2 mx-2">Twitta</button>
                     <button type="submit"  class="btn btn-lg  button mt-2 mx-2" @click="inputschedule">Pianifica</button>
 
                 </div>
+                
 
                 <div v-if="error!=''">  
                     <h3 class="text-danger text-center">{{error}}</h3>
@@ -134,6 +135,7 @@
         async post_schedule(){
         await axios.get('api/schedulepost')
         .then((response) => {
+        this.error = ''   
         this.tweets = response.data
         })
             },
@@ -144,7 +146,7 @@
                     tweet:this.text
             })
             .then((response)=>{
-           console.log(response.data)
+           this.post_public()
             })
         },
 
@@ -156,16 +158,13 @@
             schedule_at:this.data+' '+this.clock
             })
         .then((response) => {
-            if(response.data != "impossibile programmare il post")
-            {this.error='Il post non può essere pianificato per questa data'}
+             this.error = ''
+            this.post_schedule()
         })
-        .catch((error)=>{
-            if (error.response) {
-            if (error.response.status == "400 Bad Request"){
-                console.log(response.status)
+        .catch((response)=>{
+           
+                console.log(response.data)
                 this.error='Il post non può essere pianificato per questa data'
-            }
-            }
         })
         },
 
