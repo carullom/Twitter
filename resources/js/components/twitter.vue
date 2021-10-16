@@ -135,8 +135,9 @@
         async post_schedule(){
         await axios.get('api/schedulepost')
         .then((response) => {
-        this.error = ''   
+        this.error = ''
         this.tweets = response.data
+        
         })
             },
 
@@ -146,8 +147,11 @@
                     tweet:this.text
             })
             .then((response)=>{
-           this.post_public()
+                
+                this.post_public()
+
             })
+            this.text=''
         },
 
 
@@ -158,14 +162,16 @@
             schedule_at:this.data+' '+this.clock
             })
         .then((response) => {
-             this.error = ''
+            this.error = ''
             this.post_schedule()
         })
         .catch((response)=>{
-           
-                console.log(response.data)
                 this.error='Il post non può essere pianificato per questa data'
         })
+        
+        this.data=''
+        this.clock=''
+        this.text=''
         },
 
         //metodo che richiama i post già pubblicati su twitter
