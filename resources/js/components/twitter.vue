@@ -28,7 +28,7 @@
                 <div class="form-group">
                        
                     <h3>Inserisci testo</h3>
-                    <textarea v-model="text"  class="form-control"    id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
+                    <textarea v-model="text" :maxlength=240 class="form-control"  id="text" rows="3" placeholder="Cosa c'è di vuovo?" required></textarea>
                 </div>
                 <div class="form-group mt-3">
                     <h3>Scegli una data</h3>
@@ -44,8 +44,8 @@
                 
 
                 <div class="text-center m-3 mx-5">
-                    <button type="submit" value="Submit" class="btn btn-lg  button mt-2 mx-2">Twitta</button>
-                    <button type="submit"  class="btn btn-lg  button mt-2 mx-2" @click="inputschedule">Pianifica</button>
+                    <button type="submit" class="btn btn-lg  button mt-2 mx-2">Twitta</button>
+                    <button class="btn btn-lg  button mt-2 mx-2" @click.prevent="inputschedule">Pianifica</button>
 
                 </div>
                 
