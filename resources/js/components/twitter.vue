@@ -178,6 +178,7 @@
         async post_public(){
          await axios.get('api/tweet')
          .then((response) => {
+             this.error = ''
              this.posts=response.data
          
              })
