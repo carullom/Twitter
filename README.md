@@ -1,7 +1,7 @@
 <h1>Web app Twitter</h1>
 <p>Piccola web app realizzata con laravel e vue.js che permette di pubblicare e pianificare la pubblicazione dei tweet</p>
 <br>
-<h3>Installazione e configurazione</h3>
+<h3>Installazione e configurazione (In locale)</h3>
 Creare una database e collegarlo tramite il file .env al backend realizzato in laravel, dopo di che lanciare il comando da bash "php artisan migrate", verranno così create le varie tabelle.
 <br>
 Settare nel file .env i vari codici per collegarsi alle api di twitter (TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET).
